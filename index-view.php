@@ -3,35 +3,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <title>PHP Basic</title>
 </head>
 <body>
-    
-    <form action="" method="post">
-        <label for="">User Name</label>
-        <input type="text" name="name"><br>
-        <label for="">Email</label>
-        <input type="email" name="email"><br>
-        <label for="">Phone</label>
-        <input type="text" name="phone"><br>
-        <label for="">Age</label>
-        <input type="text" name="age"><br>
-        <button type="submit" name="submit">Send</button>
-    </form>
-    
-    <p style="color:red;">
-        <?= $error ?>
-    </p>
 
-
-    <!-- foreach looping -->
+    <!-- Associated Array -->
     <ul>
-        <?php foreach($items as $item) : ?>
+        <?php foreach($data1 as $key=>$item) : ?>
             <li>
-                <?= $item ?>
+                <?= $key."-".$item."<br>"; ?>
             </li>
         <?php endforeach ?>
     </ul>
 
+    <form action="" method="post" class="container mx-auto w-full flex justify-center mt-5">
+        <input type="text" name="prefix" placeholder="Prefix" class="px-2 border bg-gray-50 shadow-lg focus:outline-none">
+        <button type="submit" name="create" class="bg-green-300 px-3 py-1 shadow-lg text-white">Create Order ID</button>
+    </form>
+    <div class="container mx-auto w-full flex justify-center mt-5">
+        <p>Order ID : <?= $orderId ?></p>
+    </div>
+    
 </body>
 </html>
